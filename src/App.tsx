@@ -1,5 +1,11 @@
+import FirebaseTest from './FirebaseTest'
+
 function App (): JSX.Element {
-  return <div className='text-red-400'>Boilerplate working</div>
+  return (
+    <main>
+      <FirebaseTest />
+    </main>
+  )
 }
 
 export default App
