@@ -20,7 +20,7 @@ export function GameCanvas() {
     <div>
       <img
         src="https://firebasestorage.googleapis.com/v0/b/wheres-wally-a7ab2.appspot.com/o/wheres-wally1.jpg?alt=media&token=5188a802-e291-4da9-9c50-0c7fc13ad3e3"
-        className="min-w-max"
+        className="min-w-max pt-16"
         onClick={handleClick}
       />
       {targetShown && <Target x={targetCoords[0]} y={targetCoords[1]} />}
