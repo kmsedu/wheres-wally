@@ -1,10 +1,10 @@
 import React from 'react';
-import FirebaseTest from './firebase-test';
+import {Navbar} from './navbar';
 
 function App(): JSX.Element {
   return (
-    <main className="m-8">
-      <FirebaseTest />
+    <main>
+      <Navbar />
     </main>
   );
 }
