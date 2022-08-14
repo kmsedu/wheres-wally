@@ -14,7 +14,7 @@ export function Timer() {
 
   function formatTime(currentMilliseconds: number) {
     const totalSeconds = currentMilliseconds / 1000;
-    const clockSeconds = totalSeconds >= 60 ? totalSeconds % 60 : totalSeconds;
+    const clockSeconds = totalSeconds % 60;
     const minutes = parseInt(String(totalSeconds / 60));
 
     const displaySeconds =

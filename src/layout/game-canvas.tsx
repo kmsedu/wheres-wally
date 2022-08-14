@@ -17,9 +17,9 @@ export function GameCanvas() {
   }
 
   function handleClick(event: MouseEvent<HTMLImageElement>) {
-    toggleTargetBoxShown();
     toggleDropdownShown();
     setTargetBoxCoords([event.pageX, event.pageY]);
+    toggleTargetBoxShown();
     console.log(`${event.pageX}, ${event.pageY}`);
   }
 
