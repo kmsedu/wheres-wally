@@ -1,17 +1,24 @@
 import React, {useState} from 'react';
 import {MouseEvent} from 'react';
+import {Dropdown} from '../components/dropdown';
 import {Target} from '../components/target';
 
 export function GameCanvas() {
-  const [targetShown, setTargetBoxShown] = useState(true);
+  const [targetShown, setTargetBoxShown] = useState(false);
   const [targetCoords, setTargetBoxCoords] = useState([0, 0]);
+  const [dropdownShown, setDropdownShown] = useState(false);
 
   function toggleTargetBoxShown() {
-    setTargetBoxShown(true);
+    setTargetBoxShown(!targetShown);
+  }
+
+  function toggleDropdownShown() {
+    setDropdownShown(!dropdownShown);
   }
 
   function handleClick(event: MouseEvent<HTMLImageElement>) {
     toggleTargetBoxShown();
+    toggleDropdownShown();
     setTargetBoxCoords([event.pageX, event.pageY]);
     console.log(`${event.pageX}, ${event.pageY}`);
   }
@@ -24,6 +31,7 @@ export function GameCanvas() {
         onClick={handleClick}
       />
       {targetShown && <Target x={targetCoords[0]} y={targetCoords[1]} />}
+      {dropdownShown && <Dropdown x={targetCoords[0]} y={targetCoords[1]} />}
     </div>
   );
 }
