@@ -1,6 +1,16 @@
 import React from 'react';
 
-export function CharacterList() {
+interface CharacterListProps {
+  foundCharacters: {
+    wally: boolean;
+    odlaw: boolean;
+    wizard: boolean;
+  };
+}
+
+export function CharacterList(props: CharacterListProps) {
+  const {foundCharacters} = props;
+
   return (
     <>
       <ul className="flex flex-col gap-4">
@@ -9,21 +19,39 @@ export function CharacterList() {
             src="./wally.png"
             className="w-12 rounded-full border border-black bg-white"
           ></img>
-          <p>Wally</p>
+          {foundCharacters.wally ? (
+            <p>
+              Wally <span className="text-xl">✓</span>
+            </p>
+          ) : (
+            <p>Wally</p>
+          )}
         </li>
         <li className="flex items-center gap-2">
           <img
             src="./odlaw.png"
             className="w-12 rounded-full border border-black bg-white"
           ></img>
-          <p>Odlaw</p>
+          {foundCharacters.odlaw ? (
+            <p>
+              Odlaw <span className="text-xl">✓</span>
+            </p>
+          ) : (
+            <p>Odlaw</p>
+          )}
         </li>
         <li className="flex items-center gap-2">
           <img
             src="./wizard.png"
             className="w-12 rounded-full border border-black bg-white"
           ></img>
-          <p>Wizard</p>
+          {foundCharacters.wizard ? (
+            <p>
+              Wizard <span className="text-xl">✓</span>
+            </p>
+          ) : (
+            <p>Wizard</p>
+          )}
         </li>
       </ul>
     </>
